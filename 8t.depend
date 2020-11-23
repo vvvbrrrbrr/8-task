@@ -1,0 +1,5 @@
+# depslib dependency file v1.0
+1606152946 source:c:\users\lenovo\downloads\8t\main.c
+	<stdio.h>
+	<stdlib.h>
+
