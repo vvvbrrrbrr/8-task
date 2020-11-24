@@ -58,14 +58,24 @@ int lopopam (int a[], int n, int* sr, int* per)
         {
             i++;
             *sr=*sr+1;
+            if(i==n/2)
+            {
+                *sr=*sr-1;
+                break;
+            }
         }
         while (a[j] > a[n/2])
         {
             j--;
             *sr=*sr+1;
+            if(j==n/2)
+            {
+                *sr=*sr-1;
+                break;
+            }
         }
         *sr=*sr+2;
-        if (i <= j)
+        if (i < j)
         {
             *sr=*sr+1;
             if (a[i] > a[j])
@@ -73,6 +83,12 @@ int lopopam (int a[], int n, int* sr, int* per)
                 pomenyatt(&a[i], &a[j]);
                 *per=*per+1;
             }
+            i++;
+            if (j > 0)
+                j--;
+        }
+        if(i==j)
+        {
             i++;
             if (j > 0)
                 j--;
@@ -85,10 +101,11 @@ int lopopam (int a[], int n, int* sr, int* per)
 void s(int a[], int n, int* sr, int* per)
 {
     int k;
-    if(n>1)
     {
         k=lopopam(a, n, sr, per);
+        if(k>1)
         s(a, k, sr, per);
+        if(n-k>1)
         s(a+k, n-k, sr, per);
     }
 
@@ -109,7 +126,7 @@ int main2()
     s(a, n, &sr, &per);
     for (i=0; i<n; i++)
         printf("%d ", a[i]);
-    printf("\nsravneniy = %d perestanovok = %d\n", sr, per);
+    printf("\nsravneniy = %d perestanovok = %d", sr, per);
     return 0;
 }
 
