@@ -126,7 +126,7 @@ int main2()
     s(a, n, &sr, &per);
     for (i=0; i<n; i++)
         printf("%d ", a[i]);
-    printf("\nsravneniy = %d perestanovok = %d", sr, per);
+    printf("\nsravneniy = %d perestanovok = %d\n", sr, per);
     return 0;
 }
 
