@@ -125,8 +125,11 @@ void bababa(int a[], int n, int* sr, int* per)
                 if (a[i]<a[m])
                     m=i;
             }
-            pomenyatt(a+k, a+m);
-            *per=*per+1;
+            if(k!=m)
+            {
+                pomenyatt(a+k, a+m);
+                *per=*per+1;
+            }
         }
 }
 
