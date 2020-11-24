@@ -173,6 +173,8 @@ int main3()
 int main()
 {
     int k;
+    do
+    {
     printf("Task 8\nvyberite zadanie:\n1 Bubble sort\n2 Quicksort\n3 Selection sort\n");
     scanf("%d", &k);
     switch(k)
@@ -192,7 +194,6 @@ int main()
     }
     printf("nazhmite <<1>>, esli hotite prodolzhitb\n");
     scanf("%d", &k);
-    if(k==1)
-        main();
+    } while (k==1);
     return 0;
 }
